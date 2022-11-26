@@ -20,9 +20,10 @@ def greet(name=""):
 
 
 @app.route('/fahrenheit/<celsius>')
-def fahrenheit(celsius=""):
+def to_fahrenheit(celsius=""):
     try:
-        return str(celsius_to_fahrenheit(float(celsius)))
+        fahrenheit = celsius_to_fahrenheit(float(celsius))
+        return f"{celsius} degrees celsius =  {fahrenheit} degrees fahrenheit"
     except ValueError:
         return ""
 
